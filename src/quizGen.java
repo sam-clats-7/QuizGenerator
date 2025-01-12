@@ -66,7 +66,6 @@ public class quizGen {
 
                 }
 
-
             }
         }
         for(int k = 0; k < tempqsandas.size(); k+=2){
