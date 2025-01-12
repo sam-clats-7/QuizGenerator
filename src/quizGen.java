@@ -25,7 +25,7 @@ public class quizGen {
         readQuestion();
         makeQuiz();
         quizDisplay();
-        quizzes.add(saveQuiz());
+        allQuizzes.add(saveQuiz());
     }
     public static void displayIntro(){
         System.out.println("Welcome to the Java Geography Quiz Generator!");
