@@ -10,7 +10,7 @@ public class quizGen {
     private ArrayList<String> answers;
     private ArrayList<String> quizQs;
     private ArrayList<String> quizAs;
-    private ArrayList<PrintStream> quizzes;
+    private ArrayList<PrintStream> allQuizzes;
 
     public static void main(String[] args) throws FileNotFoundException {
         new quizGen();
