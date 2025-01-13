@@ -55,7 +55,6 @@ public class quizGen {
                     commaindex = j;
                 }
 
-
                 if(qsAndAs.get(i).charAt(j) == '?'){
                     questionindex = j;
                     tempqsandas.add(qsAndAs.get(i).substring(commaindex+1,questionindex+1));
