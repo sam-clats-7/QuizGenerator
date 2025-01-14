@@ -115,7 +115,7 @@ public class quizGen {
             String quizname = "Quiz";
             PrintStream quiz = new PrintStream(quizname);
             for (int i = 0; i < quizQs.size(); i++){
-                quiz.println("Question: " + quizQs.toArray()[i]  +
+                quiz.println("Question: " + quizQs.toArray()[i] +
                         "\nAnswer: " + quizAs.toArray()[i]);
             }
             System.out.println("quiz saved");
