@@ -105,7 +105,7 @@ public class quizGen {
     public void quizDisplay(){
         for (int i = 0; i < quizQs.size(); i++){
         System.out.println("Question: " + quizQs.toArray()[i] +
-                " \nAnswer: " + quizAs.toArray()[i]);
+                "\nAnswer: " + quizAs.toArray()[i]);
         }
     }
     public PrintStream saveQuiz() throws FileNotFoundException {
