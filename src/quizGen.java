@@ -21,6 +21,7 @@ public class quizGen {
         this.quizQs = new ArrayList<String>();
         this.quizAs = new ArrayList<String>();
         this.qsAndAs = new ArrayList<String>();
+        this.allQuizzes = new ArrayList<PrintStream>();
         displayIntro();
         readQuestion();
         makeQuiz();
@@ -33,18 +34,15 @@ public class quizGen {
         System.out.println("and makes a quiz completely randomly from a number that is entered.");
         System.out.println("The questions and answers can be saved to a file at the end of the program.");
     }
-
     public void readQuestion() throws FileNotFoundException {
-        String file = "/Users/jeremy/IdeaProjects/QuizGenerator/src/question bank and answers.csv";
+        String file = "/Users/samclatworthy/IdeaProjects/QuizGenerator/src/question bank and answers.csv";
         File f = new File(file);
         Scanner sc = new Scanner(f);
         sc.useDelimiter(",");
-        while (sc.hasNext())  //returns a boolean value
-        {
+        while (sc.hasNext()){  //returns a boolean value
             qsAndAs.add(sc.nextLine()); //find and returns the next complete token from this scanner
         }
         sc.close();  //closes the scanner
-        System.out.println(questions);
         ArrayList<String> tempqsandas = new ArrayList<String>();
         int commaindex = 0;
         int comma2index = 0;
@@ -54,7 +52,6 @@ public class quizGen {
                 if(qsAndAs.get(i).charAt(j) == ','){
                     commaindex = j;
                 }
-
                 if(qsAndAs.get(i).charAt(j) == '?'){
                     questionindex = j;
                     tempqsandas.add(qsAndAs.get(i).substring(commaindex+1,questionindex+1));
@@ -62,9 +59,7 @@ public class quizGen {
                 if(qsAndAs.get(i).charAt(j) == ','&& (questionindex == j-1 || questionindex == j-2)){
                     comma2index = j;
                     tempqsandas.add(qsAndAs.get(i).substring(comma2index+1,qsAndAs.get(i).length()));
-
                 }
-
             }
         }
         for(int k = 0; k < tempqsandas.size(); k+=2){
@@ -73,15 +68,6 @@ public class quizGen {
         for(int l = 1; l < tempqsandas.size(); l+=2){
             answers.add((String) tempqsandas.toArray()[l]);
         }
-
-
-        System.out.println(qsAndAs);
-        System.out.println(tempqsandas);
-        System.out.println(questions);
-        System.out.println(answers);
-
-
-
     }
     public void makeQuiz(){
         Scanner tempScan = new Scanner(System.in);
@@ -109,17 +95,12 @@ public class quizGen {
         }
         questions = tempQuestions;
         answers = tempAnswers;
-        ;
-
-
         for(int i = 0; i < questionNum; i++){
             quizQs.add(questions.remove(i));
         }
         for(int j = 0; j < questionNum; j++){
             quizAs.add(questions.remove(j));
         }
-
-
     }
     public void quizDisplay(){
         for (int i = 0; i < quizQs.size(); i++){
